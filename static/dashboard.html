@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CyberShield - Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="dashboard-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7V12C3 16.97 7.02 21.5 12 22C16.98 21.5 21 16.97 21 12V7L12 2ZM12 20C8.02 19.5 5 15.97 5 12V8.26L12 4.3L19 8.26V12C19 15.97 15.98 19.5 12 20Z" fill="#6D28D9"/>
+                    <path d="M12 6L7 9V12C7 15.31 9.31 18.5 12 19C14.69 18.5 17 15.31 17 12V9L12 6Z" fill="#10B981"/>
+                </svg>
+                CyberShield
+            </a>
+            <div class="user-profile">
+                <div class="user-info">
+                    <span id="user-email" class="user-email"></span>
+                    <span id="user-name" class="user-name"></span>
+                </div>
+                <div class="user-avatar">
+                    <img id="user-avatar" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236D28D9'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" alt="User Avatar">
+                </div>
+                <button id="logout-btn" class="logout-btn" title="Logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-link active">
+                    <span class="sidebar-icon">📊</span>
+                    Overview
+                </a>
+                <a href="#security" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    Security
+                </a>
+                <a href="#activity" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Activity
+                </a>
+                <a href="#settings" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>Security Overview</h1>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card security-score">
+                        <h2>Security Score</h2>
+                        <div class="score-circle">
+                            <span id="security-score">85</span>
+                        </div>
+                        <p>Your account security is good</p>
+                    </div>
+
+                    <div class="dashboard-card activity">
+                        <h2>Recent Activity</h2>
+                        <div class="activity-list" id="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">Just now</span>
+                                <span class="activity-text">Logged in successfully</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card recommendations">
+                        <h2>Security Recommendations</h2>
+                        <ul class="recommendations-list" id="recommendations-list">
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-card settings">
+                        <h2>Quick Actions</h2>
+                        <div class="settings-list">
+                            <button class="settings-btn" id="change-password-btn">
+                                <span class="settings-icon">🔑</span>
+                                Change Password
+                            </button>
+                            <button class="settings-btn" id="enable-2fa-btn">
+                                <span class="settings-icon">🔒</span>
+                                Enable 2FA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+</body>
+</html> 
